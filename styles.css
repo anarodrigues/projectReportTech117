@@ -136,6 +136,14 @@ pre {
     text-decoration: underline;
 }
 
+#references a {
+  color: #1e40af;
+  text-decoration: none;
+}
+#references a:hover {
+  text-decoration: underline;
+}
+
 /* Responsive: hide menu on small screens */
 @media (max-width: 768px) {
     #menu {
