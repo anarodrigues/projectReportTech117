@@ -265,5 +265,10 @@ section:first-of-type {
       height: auto;
       margin-top: 5mm;
   }
+  nav#menu,
+    nav#menu * {
+        display: none !important;
+        visibility: hidden !important;
+    }
 
 }
