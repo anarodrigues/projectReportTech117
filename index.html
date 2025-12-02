@@ -15,6 +15,17 @@
   <!-- Includes the stylesheet file styles.css -->
   <link rel="stylesheet" href="styles.css" />
 </head>
+<script>
+  window.addEventListener("beforeprint", () => {
+    const proto = document.getElementById("prototypeImage");
+    const printHeroImg = document.querySelector("#print-hero img");
+
+    if (proto && printHeroImg) {
+      printHeroImg.src = proto.src;
+    }
+  });
+</script>
+
 
 <body>
   <!-- Fixed Navigation Menu -->
@@ -33,9 +44,12 @@
       <li><a href="#references">References</a></li>
     </ul>
   </nav>
+ <button class="print-button" onclick="window.print()" style="position: fixed; bottom: 24px; right: 24px; padding: 10px 16px; background: #2563eb; color: white; border: none; border-radius: 8px; cursor: pointer; box-shadow: 0 2px 6px rgba(0,0,0,0.15); font-size: 0.9rem; z-index: 2000;">  Print This Page </button>
 
-
-  <h1 id="top">Collision Warning System</h1>
+  <h1 id="top">Collision Warning System </h1>
+<div id="print-hero">
+    <img src="" alt="">
+</div>
 
   <section id="information">
     <h2>Project Information</h2>
@@ -152,16 +166,20 @@
   <section id="prototype">
     <h2>Prototype</h2>
     <p>The following image shows the assembled prototype on a breadboard.</p>
-    <img src="prototype.jpg" alt="Collision warning system prototype">
+    <img  id="prototypeImage" src="prototype.jpg" alt="Collision warning system prototype">
   </section>
 
   <section id="code">
     <h2>Arduino Code</h2>
-    <p>The following Arduino code controls the system, lighting LEDs and activating the buzzer based on distance
-      readings from the HC-SR04 sensor.</p>
+    <p>The following Arduino code controls the system, lighting LEDs and activating the buzzer based on distance readings from the HC-SR04 sensor.</p>
+<div class="code-container" style="position: relative;">
+      <button class="copy-btn" onclick="copyCode()" 
+              style="position:absolute; top:8px; right:8px; z-index:10;">
+          Copy
+      </button>
 
-    <pre class="line-numbers">
-  <button class="copy-btn" onclick="copyCode()">Copy</button>
+      <pre class="line-numbers">
+ 
   <code id="arduinoCode" class="language-cpp">
 // Collision Warning System with Distance Sensor (HC-SR04)
 // Author: Ana Rodrigues
@@ -236,7 +254,8 @@ void loop() {
 
   delay(100);
 }
-    </code></pre>
+    </code>
+  </pre>
 
     <script>
       function copyCode() {
@@ -258,10 +277,6 @@ void loop() {
 
  <section id="references">
   <h2>References</h2>
-  <p>
-    The following external resources and example projects demonstrate related Arduino applications 
-    using ultrasonic distance sensors, passive buzzers, and multicolour LEDs:
-  </p>
 
   <ul>
     <li>
