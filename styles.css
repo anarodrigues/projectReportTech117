@@ -7,12 +7,6 @@ main {
     /* pushes content below the navbar */
 }
 
-
-
-:root {
-    color-scheme: light dark;
-}
-
 body {
     font-family: system-ui, Arial, sans-serif;
     line-height: 1.6;
@@ -272,3 +266,11 @@ section:first-of-type {
     }
 
 }
+
+
+#print-hero img {
+      max-width: 500px !important;
+      height: auto !important;
+      display: block;
+      margin: 0 auto 15px auto;
+    }
