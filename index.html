@@ -142,14 +142,86 @@
 
   <section id="environment">
     <h2>Environmental Impact Assessment</h2>
-    <ul>
-      <li><strong>Materials:</strong> The Arduino Uno is RoHS and WEEE compliant, limiting hazardous substances.</li>
-      <li><strong>Energy Efficiency:</strong> The circuit draws minimal power (~50 mA at 5V), ideal for USB or solar
-        power.</li>
-      <li><strong>Reusability:</strong> All components are modular and reusable, reducing electronic waste.</li>
-      <li><strong>Packaging & Shipping:</strong> Ordering all components from a single supplier helps minimize the
-        carbon footprint.</li>
-    </ul>
+    <p>To find the best way to measure distance, we compared our ultrasonic sensor to infrared and LiDAR sensors. The table below shows their pros, cons, and environmental impact.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Evaluation Area</th>
+          <th>Ultrasonic Sensor (HC-SR04)<br><em>(Our Choice)</em></th>
+          <th>Infrared (IR) Sensor</th>
+          <th>Mini LiDAR / ToF Sensor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Advantages</strong></td>
+          <td>
+            <ul>
+              <li>Very cheap (~$3.95) and easy to find.</li>
+              <li>Works in any lighting and ignores object color.</li>
+              <li>Connects easily to an Arduino.</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li>Fast response time with a narrower beam.</li>
+              <li>Small size and low cost (~$10–$15).</li>
+              <li>Not affected by sound or echoes.</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li>Very high precision and fast updates.</li>
+              <li>Narrow laser beam avoids false triggers.</li>
+              <li>Works well on most surfaces.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Disadvantages</strong></td>
+          <td>
+            <ul>
+              <li>Can miss soft or angled surfaces that absorb sound.</li>
+              <li>Wide detection cone makes precise targeting harder.</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li>Fails in bright sunlight or strong room light.</li>
+              <li>Does not work well on dark, shiny, or clear glass surfaces.</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li>Much more expensive ($15–$50+).</li>
+              <li>Requires more complex code and setup.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Sustainability Evaluation</strong></td>
+          <td>
+            <ul>
+              <li><strong>Energy:</strong> Uses very little power (~15 mA), great for USB or solar power.</li>
+              <li><strong>Waste:</strong> Parts are durable and easy to reuse, reducing electronic waste.</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li><strong>Energy:</strong> Uses slightly more power (~30–40 mA) to shine its light continuously.</li>
+              <li><strong>Waste:</strong> Optical lenses and diodes are harder to recycle if broken.</li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li><strong>Energy:</strong> Uses the most power (up to 100 mA), draining batteries faster.</li>
+              <li><strong>Waste:</strong> Complex microchips and lasers create a larger environmental footprint.</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </section>
 
   <section id="bom">
